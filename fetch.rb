@@ -48,6 +48,10 @@ class Fetcher
   def run
     @users.each do |user, token|
       @config.data.each do |endpoint, fields|
+        if File.exists?(filename(user, endpoint))
+          puts "Skipping #{user} #{endpoint}: Already Exists"
+          next
+        end
         puts "Getting #{user} #{endpoint}"
         data = getData(token, endpoint, fields)
         writeData(user, endpoint, fields, data)
