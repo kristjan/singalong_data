@@ -1,0 +1,10 @@
+{
+  "api_host": "https://api.singly.com",
+  "data": {
+    "/types/checkins": {
+      "oembed.lat": "Latitude",
+      "oembed.lng": "Longitude",
+      "at"        : "Time"
+    }
+  }
+}
