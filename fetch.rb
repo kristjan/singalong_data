@@ -42,7 +42,7 @@ class Fetcher
   end
 
   def filename(user, endpoint)
-    filename = "out/#{user}-#{endpoint[1..-1].gsub('/','-')}.tsv"
+    filename = "out#{endpoint}/#{user}.tsv"
   end
 
   def run
