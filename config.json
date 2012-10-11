@@ -6,6 +6,14 @@
       "oembed.lng"     : "Longitude",
       "oembed.title"   : "Title",
       "data.createdAt" : "Time"
+    },
+    "/types/photos": {
+      "id"                      : "ID",
+      "data.venue.location.lat" : "Latitude",
+      "data.venue.location.lng" : "Longitude",
+      "oembed.title"            : "Title",
+      "oembed.url"              : "URL",
+      "data.createdAt"          : "Time"
     }
   }
 }
