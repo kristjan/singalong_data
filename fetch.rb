@@ -31,11 +31,16 @@ class Fetcher
     })
   end
 
+  def hasLocation(datum)
+    (datum['oembed.lat'] || datum['data.venue.location.lat']).to_i > 0
+  end
+
   def writeData(user, endpoint, fields, data)
     columns = fields.keys
     CSV.open(filename(user, endpoint), 'w', :col_sep => "\t") do |tsv|
       tsv << columns.map{|col| fields[col]}.unshift('Name')
       data.each do |datum|
+        next unless hasLocation(datum)
         tsv << columns.map{|col| datum[col]}.unshift(user)
       end
     end
